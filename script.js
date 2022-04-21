@@ -5,14 +5,6 @@ const cache = {
         let expiry = d.toUTCString();
         document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
     },
-    /*
-    function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-    */
     getCookie: function(cname) {
         let name = cname + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
@@ -46,7 +38,7 @@ const editSettings = {
 const initialisePage = {
     theme: function() {
         settings.theme = cache.getCookie("theme");
-        document.getElementsByTagName("html").setAttribute("data-theme", settings.theme);
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", settings.theme);
     }
 }
 
