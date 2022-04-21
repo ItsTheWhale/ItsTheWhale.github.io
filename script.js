@@ -33,12 +33,13 @@ const editSettings = {
         settings.themeNumber = settings.themeNumber === 0 ? 1 : 0;
         settings.theme = settings.themeNumber === 0 ? "light" : "dark";
         cache.setCookie("theme", settings.theme, 365, "/")
+        document.getElementsByTagName("html")[0].setAttribute("class", settings.theme)
     }
 }
 const initialisePage = {
     theme: function() {
         settings.theme = cache.getCookie("theme");
-        document.getElementsByTagName("html")[0].setAttribute("data-theme", settings.theme);
+        document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
     }
 }
 
