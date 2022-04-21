@@ -24,3 +24,12 @@ const cache = {
         document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
     }
 };
+var settings = {
+    theme: "light"
+}
+var editSettings = {
+    theme: function(theme) {
+        settings.theme = theme;
+        cache.setCookie("theme", settings.theme, 365, "/settings")
+    }
+}
