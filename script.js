@@ -2,9 +2,17 @@ const cache = {
     setCookie: function(name, value, expiryDays, path) {
         const d = new Date();
         d.setTime(d.getTime() + (expiryDays*24*60*60*1000));
-        let expiry = "expires="+ d.toUTCString();
-        document.cookie = `${name}=${value}; expiry=${expiry}; path=${path}`
+        let expiry = d.toUTCString();
+        document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
     },
+    /*
+    function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+    */
     getCookie: function(cname) {
         let name = cname + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
@@ -25,11 +33,13 @@ const cache = {
     }
 };
 let settings = {
-    theme: "light"
+    theme: "light",
+    themeNumber: 0
 }
 const editSettings = {
-    theme: function(theme) {
-        settings.theme = theme;
+    theme: function() {
+        settings.themeNumber = settings.themeNumber === 0 ? 1 : 0;
+        settings.theme = settings.themeNumber === 0 ? "light" : "dark";
         cache.setCookie("theme", settings.theme, 365, "/")
     }
 }
@@ -38,4 +48,8 @@ const initialisePage = {
         settings.theme = cache.getCookie("theme");
         document.getElementsByTagName("html").setAttribute("data-theme", settings.theme);
     }
+}
+
+{
+    initialisePage.theme();
 }
