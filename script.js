@@ -30,7 +30,7 @@ let settings = {
 const editSettings = {
     theme: function(theme) {
         settings.theme = theme;
-        cache.setCookie("theme", settings.theme, 365, "/settings")
+        cache.setCookie("theme", settings.theme, 365, "/")
     }
 }
 const initialisePage = {
