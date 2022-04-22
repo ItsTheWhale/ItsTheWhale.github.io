@@ -27,7 +27,7 @@ const cache = {
 let settings = {
     theme: "light",
     themeNumber: 0
-}
+};
 const editSettings = {
     theme: function() {
         settings.themeNumber = settings.themeNumber === 0 ? 1 : 0;
@@ -35,14 +35,14 @@ const editSettings = {
         cache.setCookie("theme", settings.theme, 365, "/")
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme)
     }
-}
+};
 const initialisePage = {
     theme: function() {
         settings.theme = cache.getCookie("theme");
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
     }
-}
-
+};
+debugger
 {
     initialisePage.theme();
 }
