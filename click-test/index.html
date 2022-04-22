@@ -45,6 +45,7 @@
     </div>
     <div>
         <button onclick="runTime = window.prompt('Enter new test time in ms:');">Test Time</button>
+        <!--<button onclick="dynamicCPS = dynamicCPS ? false : true;">Dynamic CPS</button>-->
     </div>
     <script>
         const clickBox = document.getElementById("clickBox");
@@ -74,7 +75,6 @@
             if (dynamicCPS) clickStatus.innerHTML = "Time Elapsed: 0ms<br/>Clicks: "
         };
         clickBox.addEventListener("click", initClicker);
-
     </script>
 </body>
 
