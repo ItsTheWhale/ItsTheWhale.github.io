@@ -42,7 +42,7 @@ const initialisePage = {
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
     }
 };
-debugger
+//setTimeout(function() {while (true) {eval("debugger")}});
 {
     initialisePage.theme();
 }

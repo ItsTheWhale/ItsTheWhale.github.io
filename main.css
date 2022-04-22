@@ -24,8 +24,11 @@ body {
     border: 2px solid black;
     border-radius: 20px;
     padding: 10px;
-    text-align: center;
     color: black;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .project-wrapper {
     text-decoration: none;
