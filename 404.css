@@ -6,9 +6,5 @@ body {
     font-size: 10rem;
     margin: 0px;
 }
-.error-description {
-    font-size: 1.5rem;
-}
-.error-content a {
-    color: black;
-}
+.error-description {font-size: 1.5rem;}
+.error-content a {color: black;}

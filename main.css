@@ -4,26 +4,29 @@ body {
 }
 .light {
     background-color: white;
+    color: black;
 }
 .dark {
     background-color: black;
+    color: white;
 }
-.flex-container {
+.flex-container {display: flex;}
+.no-flex {display: block;}
+.justify-content-center {justify-content: center;}
+.flex-direction-column {flex-direction: column;}
+.project-container {
     display: flex;
-}
-.no-flex {
-    display: block;
-}
-.justify-content-center {
     justify-content: center;
-}
-.flex-direction-column {
-    flex-direction: column;
 }
 .project-section {
     height: 50px;
     width: 100px;
     border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
     text-align: center;
-    display: none;
+    color: black;
+}
+.project-wrapper {
+    text-decoration: none;
 }
