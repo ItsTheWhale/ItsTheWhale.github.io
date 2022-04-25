@@ -35,7 +35,7 @@ const UITheme = {
     moon: `<svg width="25" height="25" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.002 8.002 0 1010.586 10.586z"/></svg>`
 };
 const editSettings = {
-    theme: function () {
+    theme: function() {
         settings.themeNumber = settings.themeNumber === 0 ? 1 : 0;
         settings.theme = settings.themeNumber === 0 ? "light" : "dark";
         cache.setCookie("theme", settings.theme, 365, "/");
@@ -44,9 +44,10 @@ const editSettings = {
     }
 };
 const initialisePage = {
-    theme: function () {
+    theme: function() {
         settings.theme = cache.getCookie("theme");
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
+        document.getElementById("themechanger").innerHTML = settings.theme == "light" ? UITheme.moon : UITheme.sun;
     }
 };
 const projectDescription = {
