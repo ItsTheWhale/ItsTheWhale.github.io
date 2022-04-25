@@ -39,6 +39,7 @@ const editSettings = {
         settings.themeNumber = settings.themeNumber === 0 ? 1 : 0;
         settings.theme = settings.themeNumber === 0 ? "light" : "dark";
         cache.setCookie("theme", settings.theme, 365, "/");
+        cache.setCookie("themeNumber", settings.themeNumber, 365, "/");
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
         document.getElementById("themechanger").innerHTML = settings.theme == "light" ? UITheme.moon : UITheme.sun;
     }
@@ -46,6 +47,7 @@ const editSettings = {
 const initialisePage = {
     theme: function() {
         settings.theme = cache.getCookie("theme");
+        settings.themeNumber = cache.getCookie("themeNumber");
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
         document.getElementById("themechanger").innerHTML = settings.theme == "light" ? UITheme.moon : UITheme.sun;
     }
