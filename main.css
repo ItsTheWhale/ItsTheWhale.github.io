@@ -10,6 +10,17 @@ body {
     background-color: black;
     color: white;
 }
+.light button {
+    background-color: white;
+    fill: black;
+    border: 2px solid black;
+}
+.dark button {
+    background-color: black;
+    fill: white;
+    border: 2px solid white;
+}
+button {border: 2px solid black;}
 .flex-container {display: flex;}
 .no-flex {display: block;}
 .justify-content-center {justify-content: center;}
@@ -19,8 +30,8 @@ body {
     justify-content: center;
 }
 .project-section {
-    height: 50px;
-    width: 100px;
+    height: 70px;
+    width: 130px;
     border: 2px solid black;
     border-radius: 20px;
     padding: 10px;
@@ -29,7 +40,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
-.project-wrapper {
-    text-decoration: none;
+.project-section > strong {
+    font-size: 1.3em;
 }
+.project-section:hover {background-color: #b8b8b8;}
+.project-wrapper {text-decoration: none;}
+.uncompleted {display: none;}
