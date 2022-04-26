@@ -63,7 +63,7 @@ for (let i in projectDescription.projectId) {
     project.addEventListener("mouseenter", () => { desc.innerHTML = projectDescription.clickTest });
     project.addEventListener("mouseleave", () => { desc.innerHTML = '' });
 };
-setTimeout(function() {while (true) {eval("debugger")}});
+//setTimeout(function() {while (true) {eval("debugger")}});
 {
     initialisePage.theme();
 }
