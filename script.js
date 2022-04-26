@@ -57,15 +57,13 @@ const projectDescription = {
     descId: ["projectdesc-clickTest"],
     clickTest: "A simple CPS test"
 };
-
 for (let i in projectDescription.projectId) {
     let project = document.getElementById(projectDescription.projectId[i]);
     let desc = document.getElementById(projectDescription.descId[i]);
     project.addEventListener("mouseenter", () => { desc.innerHTML = projectDescription.clickTest });
     project.addEventListener("mouseleave", () => { desc.innerHTML = '' });
-}
-
-//setTimeout(function() {while (true) {eval("debugger")}});
+};
+setTimeout(function() {while (true) {eval("debugger")}});
 {
     initialisePage.theme();
 }
