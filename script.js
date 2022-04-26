@@ -53,9 +53,9 @@ const initialisePage = {
     }
 };
 const projectDescription = {
-    projectDesc: ["A simple CPS test", "A template for a custom wordle"],
-    projectId: ["project-clickTest", "project-customWordle"],
-    descId: ["projectdesc-clickTest", "projectdesc-customWordle"],
+    projectDesc: ["A simple CPS test", "A template for a custom wordle", "Links to send to your enemies"],
+    projectId: ["project-clickTest", "project-customWordle", "project-trolls"],
+    descId: ["projectdesc-clickTest", "projectdesc-customWordle", "projectdesc-trolls"],
 };
 for (let i in projectDescription.projectId) {
     let project = document.getElementById(projectDescription.projectId[i]);
