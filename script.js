@@ -47,7 +47,7 @@ const editSettings = {
 const initialisePage = {
     theme: function() {
         settings.theme = cache.getCookie("theme");
-        settings.themeNumber = cache.getCookie("themeNumber");
+        settings.themeNumber = Number(cache.getCookie("themeNumber"));
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
         document.getElementById("themechanger").innerHTML = settings.theme == "light" ? UITheme.moon : UITheme.sun;
     }
