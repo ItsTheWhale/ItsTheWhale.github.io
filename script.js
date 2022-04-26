@@ -53,14 +53,14 @@ const initialisePage = {
     }
 };
 const projectDescription = {
-    projectId: ["project-clickTest"],
-    descId: ["projectdesc-clickTest"],
-    clickTest: "A simple CPS test"
+    projectDesc: ["A simple CPS test", "A template for a custom wordle"],
+    projectId: ["project-clickTest", "project-customWordle"],
+    descId: ["projectdesc-clickTest", "projectdesc-customWordle"],
 };
 for (let i in projectDescription.projectId) {
     let project = document.getElementById(projectDescription.projectId[i]);
     let desc = document.getElementById(projectDescription.descId[i]);
-    project.addEventListener("mouseenter", () => { desc.innerHTML = projectDescription.clickTest });
+    project.addEventListener("mouseenter", () => { desc.innerHTML = projectDescription.projectDesc[i] });
     project.addEventListener("mouseleave", () => { desc.innerHTML = '' });
 };
 //setTimeout(function() {while (true) {eval("debugger")}});
