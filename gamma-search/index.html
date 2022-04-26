@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Searching the web - made easy!">
+        <title>GammaSearch</title>
+        <style>
+            body {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+            }
+            .logo {font-size: 4em; color: midnightblue}
+            .search-bar {width: 40%; height: 30px; font-size: 1.5em}
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 class="logo">GammaSearch</h1>
+            <input type="text" id="searchBox" class="search-bar" placeholder="Ask a question...">
+            <input type="button" value="Search!" onclick="search();">
+            <h2>Searching the web - made easy</h2>
+        </div>
+        <script type="text/javascript">
+            document.onkeydown = () => { if(window.event.keyCode=='13' && document.getElementById("searchBox").value != ''){ search(); } } 
+            function search() {
+                window.location.href = "https://www.youtube.com/watch?v=klfT41uZniI";
+            }
+        </script>
+    </body>
+</html>
