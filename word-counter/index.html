@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Word Counter</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script defer type="text/javascript" src="script.js"></script>
-    </head>
-    <body>
-        <h1>Word Counter</h1>
-        <textarea id="text" rows="30" cols="100"></textarea>
-        <div id="display">
-            <p><strong>Character Count: </strong><span id="charactercount"></span></span></p>
-            <p><strong>Word Count: </strong><span id="wordcount"></span></span></p>
-            <p><strong>Sentence Count: </strong><span id="sentencecount"></span></span></p>
-        </div>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Word Counter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        #text {
+            float: left
+        }
+
+        #display {
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word Counter</h1>
+    <textarea id="text" rows="30" cols="100"></textarea>
+    <div id="display">
+        <p><strong>Character Count: </strong><span id="charactercount"></span></span></p>
+        <p><strong>Word Count: </strong><span id="wordcount"></span></span></p>
+        <p><strong>Sentence Count: </strong><span id="sentencecount"></span></span></p>
+    </div>
+    <script type="text/javascript">
+        let text = '';
+        let textarea = document.getElementById("text");
+        textarea.addEventListener("change", () => {
+            text = textarea.value;
+            document.getElementById("charactercount").innerText = text.split('').length;
+            document.getElementById("wordcount").innerText = text.split(' ').length;
+            document.getElementById("sentencecount").innerText = text.split('.').length;
+        })
+    </script>
+</body>
+
 </html>
