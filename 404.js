@@ -34,3 +34,4 @@ const initialisePage = {
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
     }
 };
+initialisePage.theme();
