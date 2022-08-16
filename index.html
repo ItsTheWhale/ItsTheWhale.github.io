@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
-<head prefix="og: https://ogp.me/ns#">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,29 +26,49 @@
     <div>
         <h1>My Projects</h1>
         <div class="project-container">
-            <a href="click-test" class="project-wrapper">
-                <div id="project-clickTest" class="project-section">
-                    <strong>Click Test</strong>
-                    <div id="projectdesc-clickTest"></div>
+            <div style="display: block">
+                <div class="project-row">
+                    <a href="click-test" class="project-wrapper">
+                        <div id="project-clickTest" class="project-section">
+                            <strong>Click Test</strong>
+                            <div id="projectdesc-clickTest"></div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/ItsTheWhale/wordle-template" class="project-wrapper">
+                        <div id="project-customWordle" class="project-section">
+                            <strong>Custom Wordle</strong>
+                            <div id="projectdesc-customWordle"></div>
+                        </div>
+                    </a>
+                    <a href="https://water-clicker-idle.netlify.app" class="project-wrapper">
+                        <div id="project-waterClicker" class="project-section">
+                            <strong>Water Clicker (ALPHA)</strong>
+                            <div id="projectdesc-waterClicker"></div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="https://github.com/ItsTheWhale/wordle-template" class="project-wrapper">
-                <div id="project-customWordle" class="project-section">
-                    <strong>Custom Wordle</strong>
-                    <div id="projectdesc-customWordle"></div>
+                <div class="project-row">
+                    <a href="word-counter" class="project-wrapper">
+                        <div id="project-wordCount" class="project-section">
+                            <strong>Word Counter</strong>
+                            <div id="projectdesc-wordCount"></div>
+                        </div>
+                    </a>
+                    <a href="trolls" class="project-wrapper">
+                        <div id="project-trolls" class="project-section">
+                            <strong>Trolls</strong>
+                            <div id="projectdesc-trolls"></div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="trolls" class="project-wrapper">
-                <div id="project-trolls" class="project-section">
-                    <strong>Trolls</strong>
-                    <div id="projectdesc-trolls"></div>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
     <div>
-        <button id="themechanger" onclick="editSettings.theme();"><svg width="25" height="25" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.002 8.002 0 1010.586 10.586z"/>
-        </svg></button>
+        <button id="themechanger" onclick="editSettings.theme();"><svg width="25" height="25" viewBox="0 0 20 20"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.002 8.002 0 1010.586 10.586z" />
+            </svg></button>
     </div>
 </body>
 
