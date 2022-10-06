@@ -19,7 +19,8 @@ button {border: 2px solid black;}
 .no-flex {display: block;}
 .justify-content-center {justify-content: center;}
 .flex-direction-column {flex-direction: column;}
-.project-container {display: flex; justify-content: center;}
+.project-container {display: flex; justify-content: center; }
+.project-row {display: flex; }
 .project-section {
     height: 70px;
     width: 140px;

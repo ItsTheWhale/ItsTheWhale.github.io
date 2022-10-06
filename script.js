@@ -46,16 +46,16 @@ const editSettings = {
 };
 const initialisePage = {
     theme: function() {
-        settings.theme = cache.getCookie("theme");
+        settings.theme = cache.getCookie("theme") || settings.theme;
         settings.themeNumber = Number(cache.getCookie("themeNumber"));
         document.getElementsByTagName("html")[0].setAttribute("class", settings.theme);
         document.getElementById("themechanger").innerHTML = settings.theme == "light" ? UITheme.moon : UITheme.sun;
     }
 };
 const projectDescription = {
-    projectDesc: ["A simple CPS test", "A template for a custom wordle", "Links to send to your enemies"],
-    projectId: ["project-clickTest", "project-customWordle", "project-trolls"],
-    descId: ["projectdesc-clickTest", "projectdesc-customWordle", "projectdesc-trolls"],
+    projectDesc: ["A simple CPS test", "A template for a custom wordle", "Links to send to your enemies", "A minimalistic idle game", "A simple word counter"],
+    projectId: ["project-clickTest", "project-customWordle", "project-trolls", "project-waterClicker", "project-wordCount"],
+    descId: ["projectdesc-clickTest", "projectdesc-customWordle", "projectdesc-trolls", "projectdesc-waterClicker", "projectdesc-wordCount"],
 };
 for (let i in projectDescription.projectId) {
     let project = document.getElementById(projectDescription.projectId[i]);
