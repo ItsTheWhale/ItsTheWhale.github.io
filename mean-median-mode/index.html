@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Average Median Mode Finder</title>
+  <meta name="description" content="A simple tool to find the average, median and mode">
+  <meta name="author" content="ItsTheWhale">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Average Median Mode Finder</h1>
+  <input id="numbers" type="text" placeholder="10, 22, 53, 34">
+  <button onclick="calculate();">Go!</button>
+  <p>Average: <span id="average"></span></p>
+  <p>Median: <span id="median"></span></p>
+  <p>Mode: <span id="mode"></span></p>
+  <script>
+    function calculate() {
+      const input = document.getElementById("numbers").value;
+      const numbers = input.split(new RegExp(", ")).map(Number).sort((a, b) => { return a - b });
+      const sum = numbers.reduce((x, y) => {
+        return x + y;
+      }, 0);
+      const average = sum / numbers.length;
+      document.getElementById("average").innerText = average;
+      if (numbers.length % 2 == 0) {
+        const median = (numbers[numbers.length / 2] + numbers[numbers.length / 2 - 1]) / 2;
+        document.getElementById("median").innerText = median;
+      } else {
+        const median = numbers[Math.floor(numbers.length / 2)];
+        document.getElementById("median").innerText = median;
+      }
+      
+      var modeMap = {};
+      var maxEl = numbers[0], maxCount = 1;
+      for (var i = 0; i < numbers.length; i++) {
+        var el = numbers[i];
+        if (modeMap[el] == null)
+          modeMap[el] = 1;
+        else
+          modeMap[el]++;
+        if (modeMap[el] > maxCount) {
+          maxEl = el;
+          maxCount = modeMap[el];
+        }
+      }
+      document.getElementById("mode").innerText = maxEl;;
+
+    }
+
+  </script>
+</body>
+
+</html>
