@@ -1,7 +1,7 @@
 const projectDescription = {
-    projectDesc: ["About me!", "Trolling the web, made easy"],
-    projectId: ["project-aboutMe", "project-gammaSearch"],
-    descId: ["projectdesc-aboutMe", "projectdesc-gammaSearch"],
+    projectDesc: ["About me!", "Trolling the web, made easy", "Some reverse psychology..."],
+    projectId: ["project-aboutMe", "project-gammaSearch", "project-notARickroll"],
+    descId: ["projectdesc-aboutMe", "projectdesc-gammaSearch", "projectdesc-notARickroll"],
 };
 for (let i in projectDescription.projectId) {
     let project = document.getElementById(projectDescription.projectId[i]);
