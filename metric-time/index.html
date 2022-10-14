@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Metric Time Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Metric Time Calculator</h1>
+    <p>Metric Time (<a href="https://en.wikipedia.org/wiki/Metric_time">Wikipedia</a>, <a
+            href="https://zapatopi.net/metrictime/">ZPi</a>)</p>
+    <p>
+        Each metric week has 10 metric days <br />
+        Each metric day has 10 metric hours <br />
+        Each metric hour has 100 metric minutes <br />
+        Each metric minute has 100 metric seconds
+    </p>
+    <h3>Now: <span id="now">--.---</span> LMT <button
+            onclick="navigator.clipboard.writeText(document.getElementById('now').innerText);">Copy Time</button></h3>
+    <div>
+        <input id="inputtime" type="time" step="1">
+        MT <span id="outputtime">--.---</span>
+        <button onclick="calcMetricTime()">Calculate</button>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('outputtime').innerText);">Copy Time</button>
+    </div>
+    <script type="text/javascript">
+        function toMetricTime(s, m, h) {
+            return ((s / 86400) + (m / 1440) + (h / 24)) * 100;
+        }
+        function calcMetricTime() {
+            if (document.getElementById("inputtime").value == "") return;
+            const times = document.getElementById("inputtime").value.split(new RegExp(":"));
+            document.getElementById("outputtime").innerText = toMetricTime(
+                times[2], times[1], times[0]
+            ).toFixed(3);
+        }
+        setInterval(function () {
+            const d = new Date();
+            document.getElementById("now").innerText = toMetricTime(
+                d.getSeconds(),
+                d.getMinutes(),
+                d.getHours()
+            ).toFixed(3);
+        }, 86);
+    </script>
+</body>
+
+</html>
